@@ -1,0 +1,7 @@
+require('gsap');
+const tl = gsap.timeline();
+tl.fromTo('.1', {
+  width: 0
+}, {
+  width: 100
+});

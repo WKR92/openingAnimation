@@ -1,0 +1,11 @@
+var _gsap = require('gsap');
+console.log('duppa');
+const tl = _gsap.gsap.timeline();
+tl.from('.box3', {
+  height: 0,
+  duration: 1
+}).from('.box3', {
+  heigwidth: 0,
+  duration: 1,
+  delay: 1
+});

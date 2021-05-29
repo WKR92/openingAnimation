@@ -1,0 +1,9 @@
+require('gsap');
+// const tl = gsap.timeline()
+tl.fromTo('.box3', {
+  width: 0
+}, {
+  width: 100,
+  duration: 1
+});
+gsap.to('.box3');

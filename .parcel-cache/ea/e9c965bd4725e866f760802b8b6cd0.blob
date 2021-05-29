@@ -1,0 +1,16 @@
+var _gsap = require('gsap');
+_gsap.gsap.registerPlugin(CSSRulePlugin);
+const rule = CSSRulePlugin.getRule(".myClass");
+const rule2 = CSSRulePlugin.getRule(".myClass:before");
+const tl = _gsap.gsap.timeline();
+tl.from(['.box3', '.box2', ".box1"], {
+  scaleY: 0,
+  transformOrigin: 'top',
+  duration: 1
+}).// .from([".box2", ".box1"], {width: '5px', duration: 1}, 1)
+to(rule2, {
+  scaleX: 0,
+  transformOrigin: 'right',
+  duration: 1,
+  backgroundColor: 'brown'
+}, 1);

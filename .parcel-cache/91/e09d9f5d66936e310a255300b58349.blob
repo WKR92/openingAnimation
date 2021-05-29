@@ -1,0 +1,23 @@
+var _gsap = require('gsap');
+console.log('duppa');
+const tl = _gsap.gsap.timeline();
+tl.from(['.box3', '.box2', ".box1"], {
+  scaleY: 0,
+  transformOrigin: 'top',
+  duration: 1
+}).from(['.box3', ".box2", ".box1"], {
+  width: '5px',
+  duration: 1
+}, 1).to('.box2Text', {
+  opacity: 1
+}, 1).to(['.box3'], {
+  scaleX: 0,
+  transformOrigin: 'left',
+  duration: 1
+}, 2).to('.box2Text', {
+  opacity: 0
+}, 2).to(['.box2'], {
+  scaleX: 0,
+  transformOrigin: 'right',
+  duration: 1
+}, 3);

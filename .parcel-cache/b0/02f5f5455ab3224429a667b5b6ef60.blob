@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="38086df43ae8cb201de37ac7082a6654">
+    <script type="module" defer="" src="9f3f0397a3729cfef951edc494372e0c"></script>
+    <title>Anim</title>
+</head>
+<body>
+    <div class="main">
+        <div class="box1">
+            <img src="7a2f7936251ba95ef435104dc32603e1" alt="">
+            <!-- <div class="box1Text">Third Box</div> -->
+        </div>
+        <div class="box2">
+            <h1>Welcome to Web Mates!</h1>
+            <!-- <div class="box2Text">Second box</div> -->
+        </div>
+        <div class="box3">
+            <h1>Welcome to Web Mates!</h1>
+            <!-- <div class="box3Text">First box</div> -->
+        </div>
+    </div>
+</body>
+</html>

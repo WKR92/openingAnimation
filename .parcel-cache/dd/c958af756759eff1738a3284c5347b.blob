@@ -1,0 +1,23 @@
+var _gsap = require('gsap');
+var _gsapCSSRulePlugin = require("gsap/CSSRulePlugin");
+_gsap.gsap.registerPlugin(_gsapCSSRulePlugin.CSSRulePlugin);
+const rule = _gsapCSSRulePlugin.CSSRulePlugin.getRule(".box3:before");
+const tl = _gsap.gsap.timeline();
+tl.to(rule, {
+  cssRule: {
+    left: '100%'
+  },
+  duration: 1
+}, 1).to(['.box3'], {
+  scaleX: 0,
+  transformOrigin: 'left',
+  duration: 1
+}, 2).to(['.box3'], {
+  width: 0
+}, 2).to('.box1Text', {
+  opacity: 1
+}, 2).to(['.box2'], {
+  scaleX: 0,
+  transformOrigin: 'right',
+  duration: 1
+}, 3);
