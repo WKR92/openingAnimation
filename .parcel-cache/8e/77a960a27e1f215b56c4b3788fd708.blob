@@ -1,6 +1,0 @@
-var _gsap = require('gsap');
-var _gsapCSSRulePlugin = require("gsap/CSSRulePlugin");
-_gsap.gsap.registerPlugin(_gsapCSSRulePlugin.CSSRulePlugin);
-const rule = _gsapCSSRulePlugin.CSSRulePlugin.getRule(".box3:before");
-let bgColor = _gsap.gsap.getProperty('.box1', "backgroundImage");
-const tl = _gsap.gsap.timeline();

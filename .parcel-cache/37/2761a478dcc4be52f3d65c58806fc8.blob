@@ -1,3 +1,0 @@
-var _gsap = require('gsap');
-const tl = new _gsap.TimelineLite();
-tl.from;

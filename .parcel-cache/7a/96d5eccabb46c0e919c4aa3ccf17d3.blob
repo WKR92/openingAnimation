@@ -1,6 +1,0 @@
-require('gsap');
-// const tl = gsap.timeline()
-tl.to('.box3', {
-  width: 100,
-  duration: 1
-});

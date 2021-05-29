@@ -1,3 +1,0 @@
-require('gsap');
-const tl = gsap.timeline();
-tl.from;
