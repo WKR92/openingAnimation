@@ -87,6 +87,26 @@ contactNavBtn.addEventListener('click', () => {
     }    
 })
 
+
+
+
+let resizeContactLeftValue = "100%"
+const resizeContactNavBtn = document.querySelector('.resizeContactNavBtn');
+resizeContactNavBtn.addEventListener('click', () => {
+
+    const contactContainer = document.querySelector('.contactContainer');
+    if(resizeContactLeftValue === "0%"){
+        contactContainer.style['left'] = "100%";
+        resizeContactLeftValue = "100%";
+    } else {
+        contactContainer.style['left'] = "0%";
+        resizeContactLeftValue = "0%";
+    }    
+})
+
+
+// navbarBtns
+
 const homeNavBtn = document.querySelector('.homeNavBtn');
 homeNavBtn.addEventListener('click', () => {
     const cube = document.querySelector('.cube');
@@ -108,6 +128,35 @@ portfolioNavBtn.addEventListener('click', () => {
 
 const whyWeNavBtn = document.querySelector('.whyWeNavBtn');
 whyWeNavBtn.addEventListener('click', () => {
+    const cube = document.querySelector('.cube');
+    cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
+    rotateX = -270
+})
+
+
+// resizeMenuBtns
+
+const resizeHomeNavBtn = document.querySelector('.resizeHomeNavBtn');
+resizeHomeNavBtn.addEventListener('click', () => {
+    const cube = document.querySelector('.cube');
+    cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
+    rotateX = 0
+})
+
+const resizeProcessNavBtn = document.querySelector('.resizeProcessNavBtn');
+resizeProcessNavBtn.addEventListener('click', () => {
+    const cube = document.querySelector('.cube');
+    cube.style.transform = "translateZ(-50vh) rotateY(-90deg)"
+})
+
+const resizePortfolioNavBtn = document.querySelector('.resizePortfolioNavBtn');
+resizePortfolioNavBtn.addEventListener('click', () => {
+    const cube = document.querySelector('.cube');
+    cube.style.transform = "translateZ(-50vh) rotateY(90deg)"
+})
+
+const resizeWhyWeNavBtn = document.querySelector('.resizeWhyWeNavBtn');
+resizeWhyWeNavBtn.addEventListener('click', () => {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
     rotateX = -270

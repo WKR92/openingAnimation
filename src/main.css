@@ -5,7 +5,8 @@
 }
 
 body {
-    overflow-x : hidden;
+    overflow: hidden;
+    height: 100vh;
 }
 
 :root {
@@ -18,13 +19,14 @@ body {
     width: 100vw;
     position: relative;
     display: flex;
-
+    overflow: hidden;
+    
     /* zapisane w gsap 
     /* background: #485563;
     background: -webkit-linear-gradient(to right, #29323c, #485563); 
     background: linear-gradient(to right, #29323c, #485563); */
 
-}
+}   
 
 .leftBox {
     position: absolute;
@@ -39,6 +41,8 @@ body {
     transform-style: preserve-3d;
     perspective: 1000px;
 }
+
+
 
 .menu {
     display: flex;
@@ -296,4 +300,58 @@ img {
 
 .cube__face--front:hover:before{
     left: 0%;
+}
+
+
+.topBox {
+    position: absolute;
+    top: 0;
+    height: 15%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.resizeMenu {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.resizeUl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.resizeLi {
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .leftBox {
+        display: none;
+    }
+    .bgDiv{
+        width: 100%;
+    }
+    .box1 {
+        width: auto;
+        right: 8%;
+        left: 8%;
+        top: 4.5%;
+    }
+    .topBox {
+        display: flex;
+    }
+    .contactContainer{
+        width: 100%;
+    }
 }
