@@ -5,6 +5,7 @@
 }
 
 body {
+    overflow: hidden;
     overflow-x: hidden;
     height: 100vh;
 }
@@ -15,7 +16,7 @@ body {
 }
 
 .main {
-    height: 100000vh;
+    height: 10000vh;
     width: 100vw;
     position: relative;
     display: flex;
@@ -25,8 +26,6 @@ body {
     /* background: #485563;
     background: -webkit-linear-gradient(to right, #29323c, #485563); 
     background: linear-gradient(to right, #29323c, #485563); */
-
-
 }   
 
 .leftBox {
@@ -52,6 +51,7 @@ body {
     align-items: center;
     height: 75%;
     width: auto;
+    
 }
 
 ul {
@@ -230,6 +230,11 @@ img {
 
 .cube_p {
     max-width: 80%;
+    opacity: 0;
+}
+
+.cube_p_visible {
+    opacity: 1;
 }
 
 .cube__face {
@@ -483,7 +488,7 @@ img {
     background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
 }
 
-.under_face_bottom::after{
+/* .under_face_bottom::after{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -497,7 +502,7 @@ img {
     background-image: url("https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
     background-size: 100% 100%;
     background-position: center;
-}
+} */
 
 .under_face_back {
     position: absolute;
@@ -569,6 +574,41 @@ img {
 
 
 
+/* portfolio */
+
+.projectsContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    width: 250px;
+    height: 250px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    transition: all 1s ease;
+    
+}
+
+.project1 {
+    background-color: olive;
+}
+
+.project1:hover {
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 2;
+}
 
 
 
@@ -576,9 +616,7 @@ img {
 
 
 
-
-
-
+/* astronauts */
 
 
 .under_face_astro1{
@@ -632,35 +670,6 @@ img {
 }
 
 
-.miniScene {
-    height: 50px;
-    width: 50px;
-    margin: auto;
-    perspective: 800px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-}
-
-.miniCube{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: translateZ(-40vh);
-    transition: all 500ms;
-    text-align: center;
-}
-
-
-
-.deepCubeContainer {
-
-}
-
 
 
 
@@ -690,7 +699,7 @@ img {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 10%;
+    height: 14%;
     right: 0;
     display: flex;
     justify-content: center;
@@ -703,7 +712,6 @@ img {
 }
 
 .resizeMenu {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -714,17 +722,18 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     flex-wrap: wrap;
+    gap: 2px 20px;
 }
 
 .resizeLi {
-    margin-right: 25px;
     margin-bottom: 0;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 800px) {
@@ -736,9 +745,9 @@ img {
     }
     .box1 {
         width: auto;
-        right: 8%;
-        left: 8%;
-        top: 4.5%;
+        right: 4%;
+        left: 4%;
+        top: 9%;
     }
     .topBox {
         display: flex;
@@ -760,7 +769,7 @@ img {
 }
 @media screen and (max-width: 425px) {
     .scene {
-        perspective: 400px;
+        perspective: 380px;
     }
 }
 @media screen and (max-width: 400px) {

@@ -7,6 +7,14 @@ gsap.registerPlugin(CSSRulePlugin);
 const rule = CSSRulePlugin.getRule(".box3:before");
 const underTopFaceRule = CSSRulePlugin.getRule(".under_face_top::after");
 
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
+const body = document.querySelector('body');
+setTimeout(() => {
+    body.style['overflow-y'] = 'scroll';
+}, 4250)
 
 const tl = gsap.timeline()
 
@@ -26,14 +34,49 @@ const tl = gsap.timeline()
 
 
     let rotateX = 0
-    // const cube = document.querySelector('.cube');
-    // cube.addEventListener('click', (event)=>{
-    //     event.preventDefault();
-        
-    //     cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX -90) + 'deg)';
-    //     rotateX = rotateX - 90;
-    //     console.log(rotateX);
-    // })
+    let cubeFaceToUser = 'home';
+
+    
+    const makeCubeFaceToUserVisible = (face) => {
+        const faceOne = document.getElementById('front_inside');
+        const faceTwo = document.getElementById('top_inside');
+        const faceThree = document.getElementById('back_inside');
+        const faceFour = document.getElementById('bottom_inside');
+        const faceFive = document.getElementById('right_inside');
+        const faceSix = document.getElementById('left_inside');
+
+        const allFaces = document.querySelectorAll('.cube_p')
+
+        if(cubeFaceToUser === 'home') {
+            setTimeout(()=>{
+                Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
+                faceOne.classList.add('cube_p_visible');
+            }, 200)
+        }
+
+        if(cubeFaceToUser === 'proces') {
+            setTimeout(()=>{
+                Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
+                faceTwo.classList.add('cube_p_visible');
+            }, 200) 
+        }
+
+        if(cubeFaceToUser === 'portfolio') {
+            setTimeout(()=>{
+                Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
+                faceThree.classList.add('cube_p_visible');
+            }, 200)   
+        }
+
+        if(cubeFaceToUser === 'dlaczego my') {
+            setTimeout(()=>{
+                Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
+                faceFour.classList.add('cube_p_visible');
+            }, 200)
+        }
+    }
+    makeCubeFaceToUserVisible(cubeFaceToUser)
+
 
     let isUnderFaceTopOpen = false
     const cube = document.querySelector('.cube');
@@ -109,70 +152,79 @@ const tl = gsap.timeline()
     })
 
 
-
-
 window.addEventListener('click', (e)=>{
     console.log(e.target)
 })
 
-    // working on scroll
-    // let rotateX = 0
-    // window.onscroll = function() {
-    //     const cube = document.querySelector('.cube');        
-        
-    //     if (this.oldScroll < this.scrollY) {
-    //         cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX - 90) + 'deg)';
-    //         rotateX = rotateX - 90;
-    //         console.log(rotateX);
-    //     } else {
-    //         cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX + 90) + 'deg)';
-    //         rotateX = rotateX + 90;
-    //         console.log(rotateX);
-    //     }
-    //     console.log(rotateX)
-    //     this.oldScroll = this.scrollY;
-    // }
+let numberOfRotationDown = 0
 
-    function rotateCube(event) {
-        event.preventDefault();
-        console.log('start')
-        const cube = document.querySelector('.cube');
+function rotateCube(event) {
+    event.preventDefault();
+    const cube = document.querySelector('.cube');
 
 
-        // zamykanie wysuniętych stron 
-        
-        if (isUnderFaceTopOpen === true) {
-            const underFaceTop = document.querySelector('.under_face_top');
-            underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)'      
-            isUnderFaceTopOpen = false
-        }
-
-        if (isUnderFaceBottomOpen === true) {
-            underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)'
-            isUnderFaceBottomOpen = false
-        }
-
-        if (isUnderFaceBackOpen === true) {
-            underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
-            isUnderFaceBackOpen = false
-        }
-
-
-
-
-
-        if (this.oldScroll <= this.scrollY) {
-            cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX - 90) + 'deg)';
-            rotateX = rotateX - 90;
-        } else {
-            cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX + 90) + 'deg)';
-            rotateX = rotateX + 90;
-        }
-        console.log(rotateX)
-        this.oldScroll = this.scrollY;
-
-        console.log('koniec')
+    // zamykanie wysuniętych stron 
+    
+    if (isUnderFaceTopOpen === true) {
+        const underFaceTop = document.querySelector('.under_face_top');
+        underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)'      
+        isUnderFaceTopOpen = false
     }
+
+    if (isUnderFaceBottomOpen === true) {
+        underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)'
+        isUnderFaceBottomOpen = false
+    }
+
+    if (isUnderFaceBackOpen === true) {
+        underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
+        isUnderFaceBackOpen = false
+    }
+
+
+    if (this.oldScroll === undefined || this.oldScroll <= this.scrollY) {
+        cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX - 90) + 'deg)';
+        rotateX = rotateX - 90;
+        numberOfRotationDown = numberOfRotationDown + 1        
+    } else {
+        cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX + 90) + 'deg)';
+        rotateX = rotateX + 90;
+        numberOfRotationDown = numberOfRotationDown - 1
+    }
+    this.oldScroll = this.scrollY;
+
+
+    let roundGroup = Math.floor((Math.abs(numberOfRotationDown)-1)/4)*4
+    if(numberOfRotationDown > 0) {
+        if(Math.abs(rotateX)/90 === 1 + roundGroup){
+            cubeFaceToUser = 'proces'
+        }
+        if(Math.abs(rotateX)/90 === 2 + roundGroup){
+            cubeFaceToUser = 'portfolio'
+        }
+        if(Math.abs(rotateX)/90 === 3 + roundGroup){
+            cubeFaceToUser = 'dlaczego my'
+        }
+        if(Math.abs(rotateX)/90 === 4 + roundGroup){
+            cubeFaceToUser = 'home'
+        }
+    } else {
+        if(Math.abs(rotateX)/90 === 1 + roundGroup){
+            cubeFaceToUser = 'dlaczego my'
+        }
+        if(Math.abs(rotateX)/90 === 2 + roundGroup){
+            cubeFaceToUser = 'portfolio'
+        }
+        if(Math.abs(rotateX)/90 === 3 + roundGroup){
+            cubeFaceToUser = 'proces'
+        }
+        if(Math.abs(rotateX)/90 === 4 + roundGroup){
+            cubeFaceToUser = 'home'
+        }
+    }
+    console.log(cubeFaceToUser)
+    makeCubeFaceToUserVisible(cubeFaceToUser)
+}
 
 window.addEventListener('scroll', debounce(rotateCube, 50));
 
@@ -226,15 +278,80 @@ homeNavBtn.addEventListener('click', () => {
             cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
             rotateX = 0
         }, 400)
+
+        numberOfRotationDown = 0
+        cubeFaceToUser = 'home'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
         rotateX = 0
+
+        numberOfRotationDown = 0
+        cubeFaceToUser = 'home'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     }    
 })
 
 const processNavBtn = document.querySelector('.processNavBtn');
 processNavBtn.addEventListener('click', () => {
+
+    if(contactLeftValue === "20%"){
+        const contactContainer = document.querySelector('.contactContainer');
+        contactContainer.style['left'] = "100%";
+        contactLeftValue = "100%";
+
+        setTimeout(()=>{
+            const cube = document.querySelector('.cube');
+            cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
+            rotateX = -90
+        }, 400)
+
+        numberOfRotationDown = 1
+        cubeFaceToUser = 'proces'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    } else {
+        const cube = document.querySelector('.cube');
+        cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
+        rotateX = -90
+
+        numberOfRotationDown = 1
+        cubeFaceToUser = 'proces'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    }
+})
+
+const portfolioNavBtn = document.querySelector('.portfolioNavBtn');
+portfolioNavBtn.addEventListener('click', () => {
+
+    if(contactLeftValue === "20%"){
+        const contactContainer = document.querySelector('.contactContainer');
+        contactContainer.style['left'] = "100%";
+        contactLeftValue = "100%";
+
+        setTimeout(()=>{
+            const cube = document.querySelector('.cube');
+            cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
+            rotateX = -180
+        }, 400)
+
+        numberOfRotationDown = 2
+        cubeFaceToUser = 'portfolio'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    } else {
+        const cube = document.querySelector('.cube');
+        cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
+        rotateX = -180
+
+        numberOfRotationDown = 2
+        cubeFaceToUser = 'portfolio'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    }
+})
+
+
+const extraOne = document.querySelector('.extraOne');
+extraOne.addEventListener('click', () => {
 
     if(contactLeftValue === "20%"){
         const contactContainer = document.querySelector('.contactContainer');
@@ -251,8 +368,9 @@ processNavBtn.addEventListener('click', () => {
     }    
 })
 
-const portfolioNavBtn = document.querySelector('.portfolioNavBtn');
-portfolioNavBtn.addEventListener('click', () => {
+
+const extraTwo = document.querySelector('.extraTwo');
+extraTwo.addEventListener('click', () => {
 
     if(contactLeftValue === "20%"){
         const contactContainer = document.querySelector('.contactContainer');
@@ -282,10 +400,18 @@ whyWeNavBtn.addEventListener('click', () => {
             cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
             rotateX = -270
         }, 400)
+
+        numberOfRotationDown = 3
+        cubeFaceToUser = 'dlaczego my'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
         rotateX = -270
+
+        numberOfRotationDown = 3
+        cubeFaceToUser = 'dlaczego my'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     }         
 })
 
@@ -305,15 +431,79 @@ resizeHomeNavBtn.addEventListener('click', () => {
             cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
             rotateX = 0
         }, 400)
+
+        numberOfRotationDown = 0
+        cubeFaceToUser = 'home'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
         rotateX = 0
+
+        numberOfRotationDown = 0
+        cubeFaceToUser = 'home'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     }
 })
 
 const resizeProcessNavBtn = document.querySelector('.resizeProcessNavBtn');
 resizeProcessNavBtn.addEventListener('click', () => {
+
+    if(resizeContactLeftValue === "0%"){
+        const contactContainer = document.querySelector('.contactContainer');
+        contactContainer.style['left'] = "100%";
+        resizeContactLeftValue = "100%";
+
+        setTimeout(()=>{
+            const cube = document.querySelector('.cube');
+            cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
+            rotateX = -90
+        }, 400)
+
+        numberOfRotationDown = 1
+        cubeFaceToUser = 'proces'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    } else {
+        const cube = document.querySelector('.cube');
+        cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
+        rotateX = -90
+
+        numberOfRotationDown = 1
+        cubeFaceToUser = 'proces'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    }
+})
+
+const resizePortfolioNavBtn = document.querySelector('.resizePortfolioNavBtn');
+resizePortfolioNavBtn.addEventListener('click', () => {
+
+    if(resizeContactLeftValue === "0%"){
+        const contactContainer = document.querySelector('.contactContainer');
+        contactContainer.style['left'] = "100%";
+        resizeContactLeftValue = "100%";
+
+        setTimeout(()=>{
+            const cube = document.querySelector('.cube');
+            cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
+            rotateX = -180
+        }, 400)
+
+        numberOfRotationDown = 2
+        cubeFaceToUser = 'portfolio'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    } else {
+        const cube = document.querySelector('.cube');
+        cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
+        rotateX = -180
+
+        numberOfRotationDown = 2
+        cubeFaceToUser = 'portfolio'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
+    }
+})
+
+const resizeExtraOne = document.querySelector('.resizeExtraOne');
+resizeExtraOne.addEventListener('click', () => {
 
     if(resizeContactLeftValue === "0%"){
         const contactContainer = document.querySelector('.contactContainer');
@@ -330,8 +520,9 @@ resizeProcessNavBtn.addEventListener('click', () => {
     } 
 })
 
-const resizePortfolioNavBtn = document.querySelector('.resizePortfolioNavBtn');
-resizePortfolioNavBtn.addEventListener('click', () => {
+
+const resizeExtraTwo = document.querySelector('.resizeExtraTwo');
+resizeExtraTwo.addEventListener('click', () => {
 
     if(resizeContactLeftValue === "0%"){
         const contactContainer = document.querySelector('.contactContainer');
@@ -361,9 +552,18 @@ resizeWhyWeNavBtn.addEventListener('click', () => {
             cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
             rotateX = -270
         }, 400)
+
+        numberOfRotationDown = 3
+        cubeFaceToUser = 'dlaczego my'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
         rotateX = -270
+
+        numberOfRotationDown = 3
+        cubeFaceToUser = 'dlaczego my'
+        makeCubeFaceToUserVisible(cubeFaceToUser)
     }
 })
+
