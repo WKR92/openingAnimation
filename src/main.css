@@ -82,7 +82,9 @@ li::after {
     content: "";
     width: 0%;
     height: 30%;
-    background-color: rgb(194, 121, 26);
+    background: #ad5389;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     bottom: 30%;
     z-index: -1;
     transition: all 250ms ease;
@@ -91,6 +93,34 @@ li::after {
 li:hover:after{
     width: 100%;
 }
+
+
+.chosen {
+    transform: translateZ(120px);
+}
+
+.chosen::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30%;
+    background: #659999;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    bottom: 30%;
+    z-index: -1;
+    transition: all 250ms ease;
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
 
 .bgDiv{
     position: absolute;
@@ -143,6 +173,7 @@ img {
     color: #fff;
 
     position: fixed;
+
 }
 
 .contactContainer {
@@ -191,18 +222,13 @@ img {
     content: "";
     border: none;
     outline: none;
+    opacity: 0;
 }
 
 .box1Text, .box2Text, .box3Text {
     opacity: 1;
-    width: 100px;
-    color: #fff;  
-}
-
-.box2Text, .box3Text, .box1Text {
-    white-space: nowrap;
-    width: auto;
-    margin: auto;
+    color: #fff;
+    text-align: center;
     font-size: 22px;
 }
 
@@ -573,7 +599,6 @@ img {
 
 
 
-
 /* portfolio */
 
 .projectsContainer {
@@ -705,7 +730,7 @@ img {
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    perspective: 1000px;
+    perspective: 1500px;
     position: fixed;
     z-index: 1;
     display: none;
@@ -724,15 +749,13 @@ img {
     align-items: center;
     width: 90%;
     flex-wrap: wrap;
-    gap: 2px 20px;
+    gap: 2px 30px;
 }
 
 .resizeLi {
     margin-bottom: 0;
     cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
     white-space: nowrap;
 }
 
@@ -775,5 +798,25 @@ img {
 @media screen and (max-width: 400px) {
     .scene {
         perspective: 300px;
+    }
+
+    .leftBox {
+        display: none;
+    }
+    .bgDiv{
+        width: 100%;
+    }
+    .box1 {
+        width: auto;
+        right: 4%;
+        left: 4%;
+        top: 12%;
+    }
+    .topBox {
+        display: flex;
+        height: 18%;
+    }
+    .contactContainer{
+        width: 100%;
     }
 }
