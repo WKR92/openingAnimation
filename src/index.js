@@ -6,7 +6,6 @@ gsap.registerPlugin(CSSRulePlugin);
 const rule = CSSRulePlugin.getRule(".box3:before");
 const underTopFaceRule = CSSRulePlugin.getRule(".under_face_top::after");
 const choseAfterRule = CSSRulePlugin.getRule(".chosen::after");
-
 const homeLi = CSSRulePlugin.getRule(".under_face_top::after");
 
 
@@ -121,10 +120,10 @@ const makeCubeFaceToUserVisible = (face) => {
 
     if(cubeFaceToUser === 'portfolio') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
+            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'));
             faceThree.classList.add('cube_p_visible');
 
-            Object.values(allNavLinks).map(e => e.classList.remove('chosen'))
+            Object.values(allNavLinks).map(e => e.classList.remove('chosen'));
             portfolioNavBtn.classList.add('chosen');
             resizePortfolioNavBtn.classList.add('chosen');
         }, 200)   
@@ -166,7 +165,7 @@ const makeCubeFaceToUserVisible = (face) => {
 makeCubeFaceToUserVisible(cubeFaceToUser)
 
 
-let isUnderFaceTopOpen = false
+let isUnderFaceTopOpen = false;
 const cube = document.querySelector('.cube');
 const faceTop = document.querySelector('.cube__face--top');
 faceTop.addEventListener('click', (event)=>{
@@ -176,23 +175,18 @@ faceTop.addEventListener('click', (event)=>{
     underFaceTop.style = 'transform: scaleX(1) rotateX( 90deg) translateZ(40vh)'
 
 
-    gsap.to(underTopFaceRule, {cssRule: {right: '100%'}, duration: .5, delay: .5})
+    gsap.to(underTopFaceRule, {cssRule: {right: '100%'}, duration: .5, delay: .5});
 
-    isUnderFaceTopOpen = true
+    isUnderFaceTopOpen = true;
 })
 
 const underFaceTop = document.querySelector('.under_face_top');
 underFaceTop.addEventListener('click', ()=> {
-    underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)'
-
-//    setTimeout(()=>{
-//     gsap.to(underTopFaceRule, {cssRule: {right: '0'}})
-//    }, 500)
-
-    isUnderFaceTopOpen = false
+    underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)';
+    isUnderFaceTopOpen = false;
 })
 
-let isUnderFaceBottomOpen = false
+let isUnderFaceBottomOpen = false;
 const faceBottom = document.querySelector('.cube__face--bottom');
 faceBottom.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -200,21 +194,64 @@ faceBottom.addEventListener('click', (event)=>{
     const underFaceBottom = document.querySelector('.under_face_bottom');
     underFaceBottom.style = 'transform: scaleX(1) rotateX(-90deg) translateZ(40vh)'
 
-
     // gsap.to(underBottomFaceRule, {cssRule: {right: '100%'}, duration: .5, delay: .5})
 
-    isUnderFaceBottomOpen = true
+    isUnderFaceBottomOpen = true;
 })
 
 const underFaceBottom = document.querySelector('.under_face_bottom');
 underFaceBottom.addEventListener('click', ()=> {
-    underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)'
+    underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)';
 
-//    setTimeout(()=>{
-//     gsap.to(underBottomFaceRule, {cssRule: {right: '0'}})
-//    }, 500)
+    isUnderFaceBottomOpen = false;
+})
 
-    isUnderFaceBottomOpen = false
+
+
+let isUnderFaceRightOpen = false;
+const faceRight = document.querySelector('.cube__face--right');
+faceRight.addEventListener('click', ()=> {
+
+    const underFaceRight = document.querySelector('.under_face_right');
+    if(isUnderFaceRightOpen === false) {
+        underFaceRight.style['width'] = '80vh'
+        underFaceRight.style['overflow'] = 'normal'
+        isUnderFaceRightOpen = true
+    } else {
+        underFaceRight.style['width'] = '0vh'
+        underFaceRight.style['overflow'] = 'hidden'
+        isUnderFaceRightOpen = false
+    }
+})
+
+const underFaceRight = document.querySelector('.under_face_right');
+underFaceRight.addEventListener('click', ()=>{
+    underFaceRight.style['width'] = '0vh'
+    underFaceRight.style['overflow'] = 'hidden'
+    isUnderFaceRightOpen = false
+})
+
+let isUnderFaceLeftOpen = false
+const faceLeft = document.querySelector('.cube__face--left');
+faceLeft.addEventListener('click', ()=> {
+
+    const underFaceLeft = document.querySelector('.under_face_left');
+    if(isUnderFaceLeftOpen === false) {
+        underFaceLeft.style['width'] = '80vh'
+        underFaceLeft.style['overflow'] = 'normal'
+        isUnderFaceLeftOpen = true
+    } else {
+        underFaceLeft.style['width'] = '0vh'
+        underFaceLeft.style['overflow'] = 'hidden'
+        isUnderFaceLeftOpen = false
+    }
+})
+
+const underFaceLeft = document.querySelector('.under_face_left');
+underFaceLeft.addEventListener('click', ()=>{
+    underFaceLeft.style['width'] = '0vh'
+    underFaceLeft.style['overflow'] = 'hidden'
+    isUnderFaceLeftOpen = false
 })
 
 
@@ -234,15 +271,77 @@ faceBack.addEventListener('click', (event)=>{
 })
 
 const underFaceBack = document.querySelector('.under_face_back');
-underFaceBack.addEventListener('click', ()=> {
+underFaceBack.addEventListener('click', () => {
     underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
     isUnderFaceBackOpen = false
+})
+
+let isUnderFaceFrontOpen = false
+const faceFront = document.querySelector('.cube__face--front');
+faceFront.addEventListener('click', (event)=>{
+    event.preventDefault();
+
+    const underFaceFront = document.querySelector('.under_face_front');
+    if(isUnderFaceFrontOpen === false) {
+        console.log('dupppaaa')
+        underFaceFront.style.transform = 'scaleX(1) rotateX( 0deg) translateZ(40vh)';
+        isUnderFaceFrontOpen = true;
+    }
+})
+
+const underFaceFront = document.querySelector('.under_face_front');
+underFaceFront.addEventListener('click', () => {
+    underFaceFront.style.transform = 'scaleX(0) rotateX( 0deg) translateZ(40vh)';
+    isUnderFaceFrontOpen = false;
 })
 
 
 window.addEventListener('click', (e)=>{
     console.log(e.target)
 })
+
+// close opened info blocks
+
+const closeOpenInfoBlock = () => {
+
+    if (isUnderFaceTopOpen === true) {
+        const underFaceTop = document.querySelector('.under_face_top');
+        underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)'      
+        isUnderFaceTopOpen = false
+    }
+
+    if (isUnderFaceBottomOpen === true) {
+        const underFaceBottom = document.querySelector('.under_face_bottom');
+        underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)'
+        isUnderFaceBottomOpen = false
+    }
+
+    if (isUnderFaceBackOpen === true) {
+        const underFaceBack = document.querySelector('.under_face_back');
+        underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
+        isUnderFaceBackOpen = false
+    }
+
+    if (isUnderFaceFrontOpen === true) {
+        const underFaceFront = document.querySelector('.under_face_front');
+        underFaceFront.style.transform = 'scaleX(0) rotateX( 0deg) translateZ(40vh)';
+        isUnderFaceFrontOpen = false
+    }
+
+    if (isUnderFaceRightOpen === true) {
+        const underFaceRight = document.querySelector('.under_face_right');
+        underFaceRight.style['width'] = '0vh'
+        underFaceRight.style['overflow'] = 'hidden'
+        isUnderFaceRightOpen = false
+    }
+
+    if (isUnderFaceLeftOpen === true) {
+        const underFaceLeft = document.querySelector('.under_face_left');
+        underFaceLeft.style['width'] = '0vh'
+        underFaceLeft.style['overflow'] = 'hidden'
+        isUnderFaceLeftOpen = false
+    }
+}
 
 // rotate on scroll
 
@@ -251,33 +350,34 @@ let numberOfRotationDown = 0
 function rotateCube(event) {
     event.preventDefault();
     const cube = document.querySelector('.cube');
+    const netNauts = document.querySelectorAll('.astro');
 
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
 
-    // zamykanie wysuniętych stron 
-    
-    if (isUnderFaceTopOpen === true) {
-        const underFaceTop = document.querySelector('.under_face_top');
-        underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)'      
-        isUnderFaceTopOpen = false
-    }
-
-    if (isUnderFaceBottomOpen === true) {
-        underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)'
-        isUnderFaceBottomOpen = false
-    }
-
-    if (isUnderFaceBackOpen === true) {
-        underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
-        isUnderFaceBackOpen = false
-    }
-
+    closeOpenInfoBlock();
 
     if (this.oldScroll === undefined || this.oldScroll <= this.scrollY) {
         cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX - 90) + 'deg)';
+        
+        // Object.values(netNauts).map(e => e.style.transform = 'translateZ(0vh) rotateX(' + (rotateX - 90) + 'deg)')
+        astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX - 90) + 'deg) rotateY(0deg)'
+        astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX - 90) + 'deg) rotateY(0deg)'
+        astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX - 90) + 'deg) rotateY(0deg)'
+        astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX - 90) + 'deg) rotateY(0deg)'
+
         rotateX = rotateX - 90;
         numberOfRotationDown = numberOfRotationDown + 1        
     } else {
         cube.style.transform = 'translateZ(-40vh) rotateX(' + (rotateX + 90) + 'deg)';
+
+        astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX + 90) + 'deg) rotateY(0deg)'
+        astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX + 90) + 'deg) rotateY(0deg)'
+        astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX + 90) + 'deg) rotateY(0deg)'
+        astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX + 90) + 'deg) rotateY(0deg)'
+
         rotateX = rotateX + 90;
         numberOfRotationDown = numberOfRotationDown - 1
     }
@@ -415,7 +515,19 @@ homeNavBtn.addEventListener('click', () => {
         numberOfRotationDown = 0
         cubeFaceToUser = 'home'
         makeCubeFaceToUserVisible(cubeFaceToUser)
-    }    
+    }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)'
 })
 
 // processNavBtn
@@ -446,6 +558,18 @@ processNavBtn.addEventListener('click', () => {
         cubeFaceToUser = 'proces'
         makeCubeFaceToUserVisible(cubeFaceToUser)
     }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)'
 })
 
 // portfolioNavBtn
@@ -476,6 +600,18 @@ portfolioNavBtn.addEventListener('click', () => {
         cubeFaceToUser = 'portfolio'
         makeCubeFaceToUserVisible(cubeFaceToUser)
     }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)'
 })
 
 // whyWeNavBtn
@@ -505,7 +641,19 @@ whyWeNavBtn.addEventListener('click', () => {
         numberOfRotationDown = 3
         cubeFaceToUser = 'dlaczego my'
         makeCubeFaceToUserVisible(cubeFaceToUser)
-    }         
+    }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)'
 })
 
 // extraOne
@@ -531,7 +679,19 @@ extraOne.addEventListener('click', () => {
 
         cubeFaceToUser = 'right'
         makeCubeFaceToUserVisible(cubeFaceToUser)
-    }    
+    }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
 })
 
 // extraTwo
@@ -557,7 +717,19 @@ extraTwo.addEventListener('click', () => {
 
         cubeFaceToUser = 'left'
         makeCubeFaceToUserVisible(cubeFaceToUser)
-    }     
+    }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
 })
 
 
@@ -591,6 +763,18 @@ resizeHomeNavBtn.addEventListener('click', () => {
         cubeFaceToUser = 'home'
         makeCubeFaceToUserVisible(cubeFaceToUser)
     }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)'
 })
 
 // resizeProcessNavBtn
@@ -621,6 +805,18 @@ resizeProcessNavBtn.addEventListener('click', () => {
         cubeFaceToUser = 'proces'
         makeCubeFaceToUserVisible(cubeFaceToUser)
     }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)'
 })
 
 // resizePortfolioNavBtn
@@ -651,6 +847,18 @@ resizePortfolioNavBtn.addEventListener('click', () => {
         cubeFaceToUser = 'portfolio'
         makeCubeFaceToUserVisible(cubeFaceToUser)
     }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)'
 })
 
 // resizeExtraOne
@@ -676,7 +884,19 @@ resizeExtraOne.addEventListener('click', () => {
 
         cubeFaceToUser = 'right'
         makeCubeFaceToUserVisible(cubeFaceToUser)
-    } 
+    }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
 })
 
 
@@ -703,7 +923,19 @@ resizeExtraTwo.addEventListener('click', () => {
 
         cubeFaceToUser = 'left'
         makeCubeFaceToUserVisible(cubeFaceToUser)
-    } 
+    }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
 })
 
 const resizeWhyWeNavBtn = document.querySelector('.resizeWhyWeNavBtn');
@@ -733,5 +965,17 @@ resizeWhyWeNavBtn.addEventListener('click', () => {
         cubeFaceToUser = 'dlaczego my'
         makeCubeFaceToUserVisible(cubeFaceToUser)
     }
+    closeOpenInfoBlock();
+
+    // turn astronauts
+    const astro1 = document.querySelector('.astro1');
+    const astro2 = document.querySelector('.astro2');
+    const astro3 = document.querySelector('.astro3');
+    const astro4 = document.querySelector('.astro4');
+
+    astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)'
+    astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)'
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)'
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)'
 })
 
