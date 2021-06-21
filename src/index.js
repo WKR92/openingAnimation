@@ -9,17 +9,10 @@ const choseAfterRule = CSSRulePlugin.getRule(".chosen::after");
 const homeLi = CSSRulePlugin.getRule(".under_face_top::after");
 
 
-// push scroll top on resize
+// push scroll top on reload
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
-
-// unable scoll until end of etrance animations
-const body = document.querySelector('body');
-setTimeout(() => {
-    body.style['overflow-y'] = 'scroll';
-}, 4250)
-
 
 // entrance animations
 const tl = gsap.timeline()
@@ -41,7 +34,6 @@ if(document.body.clientWidth > 800){
         background: '-webkit-linear-gradient(to right, #000C40, #F0F2F0)', 
         background: 'linear-gradient(to right, #000C40, #F0F2F0)', duration: 1},
          4)
-    .to('.box1', {clearProps: "transform"}, 4)
     .to(choseAfterRule, {cssRule: {opacity: 1}, duration: .5}, 4)
 
 } else {
@@ -61,7 +53,6 @@ if(document.body.clientWidth > 800){
         background: '-webkit-linear-gradient(to right, #000C40, #F0F2F0)', 
         background: 'linear-gradient(to right, #000C40, #F0F2F0)', duration: 1},
          4)
-    .to('.box1', {clearProps: "transform"}, 4)
     .fromTo('.topBox', {zIndex: -1}, {zIndex: 1}, 4)
     .to(choseAfterRule, {cssRule: {opacity: 1}, duration: .5}, 4)
 }
@@ -69,15 +60,16 @@ if(document.body.clientWidth > 800){
 // general values
 let rotateX = 0
 let cubeFaceToUser = 'home';
+const body = document.querySelector('body');
 
 // select front face of cube
 const makeCubeFaceToUserVisible = (face) => {
-    const faceOne = document.getElementById('front_inside');
-    const faceTwo = document.getElementById('top_inside');
-    const faceThree = document.getElementById('back_inside');
-    const faceFour = document.getElementById('bottom_inside');
-    const faceFive = document.getElementById('right_inside');
-    const faceSix = document.getElementById('left_inside');
+    const faceOne = document.querySelector('.homeContainer');
+    const faceTwo = document.querySelector('.processContainer');
+    const faceThree = document.querySelector('.portfolioContainer');
+    const faceFour = document.querySelector('.whyWeContainer');
+    const faceFive = document.querySelector('.rightContainer');
+    const faceSix = document.querySelector('.leftContainer');
 
     const homeNavBtn = document.querySelector('.homeNavBtn');
     const processNavBtn = document.querySelector('.processNavBtn');
@@ -93,13 +85,13 @@ const makeCubeFaceToUserVisible = (face) => {
     const resizeExtraOne = document.querySelector('.resizeExtraOne');
     const resizeExtraTwo = document.querySelector('.resizeExtraTwo');
 
-    const allFaces = document.querySelectorAll('.cube_p')
+    const allFaces = document.querySelectorAll('.contentHolder')
     const allNavLinks = document.querySelectorAll('li');
 
     if(cubeFaceToUser === 'home') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
-            faceOne.classList.add('cube_p_visible');
+            Object.values(allFaces).map(e => e.classList.remove('contentHolderVisible'))
+            faceOne.classList.add('contentHolderVisible');
 
             Object.values(allNavLinks).map(e => e.classList.remove('chosen'))
             homeNavBtn.classList.add('chosen');
@@ -109,8 +101,8 @@ const makeCubeFaceToUserVisible = (face) => {
 
     if(cubeFaceToUser === 'proces') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
-            faceTwo.classList.add('cube_p_visible');
+            Object.values(allFaces).map(e => e.classList.remove('contentHolderVisible'))
+            faceTwo.classList.add('contentHolderVisible');
 
             Object.values(allNavLinks).map(e => e.classList.remove('chosen'))
             processNavBtn.classList.add('chosen');
@@ -120,8 +112,8 @@ const makeCubeFaceToUserVisible = (face) => {
 
     if(cubeFaceToUser === 'portfolio') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'));
-            faceThree.classList.add('cube_p_visible');
+            Object.values(allFaces).map(e => e.classList.remove('contentHolderVisible'));
+            faceThree.classList.add('contentHolderVisible');
 
             Object.values(allNavLinks).map(e => e.classList.remove('chosen'));
             portfolioNavBtn.classList.add('chosen');
@@ -131,8 +123,8 @@ const makeCubeFaceToUserVisible = (face) => {
 
     if(cubeFaceToUser === 'dlaczego my') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
-            faceFour.classList.add('cube_p_visible');
+            Object.values(allFaces).map(e => e.classList.remove('contentHolderVisible'))
+            faceFour.classList.add('contentHolderVisible');
 
             Object.values(allNavLinks).map(e => e.classList.remove('chosen'))
             whyWeNavBtn.classList.add('chosen');
@@ -142,8 +134,8 @@ const makeCubeFaceToUserVisible = (face) => {
 
     if(cubeFaceToUser === 'right') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
-            faceFive.classList.add('cube_p_visible');
+            Object.values(allFaces).map(e => e.classList.remove('contentHolderVisible'))
+            faceFive.classList.add('contentHolderVisible');
 
             Object.values(allNavLinks).map(e => e.classList.remove('chosen'))
             extraOne.classList.add('chosen');
@@ -153,8 +145,8 @@ const makeCubeFaceToUserVisible = (face) => {
 
     if(cubeFaceToUser === 'left') {
         setTimeout(()=>{
-            Object.values(allFaces).map(e => e.classList.remove('cube_p_visible'))
-            faceSix.classList.add('cube_p_visible');
+            Object.values(allFaces).map(e => e.classList.remove('contentHolderVisible'))
+            faceSix.classList.add('contentHolderVisible');
 
             Object.values(allNavLinks).map(e => e.classList.remove('chosen'))
             extraTwo.classList.add('chosen');
@@ -165,48 +157,55 @@ const makeCubeFaceToUserVisible = (face) => {
 makeCubeFaceToUserVisible(cubeFaceToUser)
 
 
+// underFaces logic
+
+const faceOne = document.querySelector('.homeContainer');
+const faceTwo = document.querySelector('.processContainer');
+const faceThree = document.querySelector('.portfolioContainer');
+const faceFour = document.querySelector('.whyWeContainer');
+const faceFive = document.querySelector('.rightContainer');
+const faceSix = document.querySelector('.leftContainer');
+
 let isUnderFaceTopOpen = false;
 const cube = document.querySelector('.cube');
 const faceTop = document.querySelector('.cube__face--top');
-faceTop.addEventListener('click', (event)=>{
-    event.preventDefault();
-
+faceTop.addEventListener('click', ()=>{
     const underFaceTop = document.querySelector('.under_face_top');
     underFaceTop.style = 'transform: scaleX(1) rotateX( 90deg) translateZ(40vh)'
-
-
-    gsap.to(underTopFaceRule, {cssRule: {right: '100%'}, duration: .5, delay: .5});
-
     isUnderFaceTopOpen = true;
+
+    faceTwo.classList.remove('contentHolderVisible');
 })
 
 const underFaceTop = document.querySelector('.under_face_top');
 underFaceTop.addEventListener('click', ()=> {
     underFaceTop.style = 'transform: scaleX(0) rotateX( 90deg) translateZ(40vh)';
     isUnderFaceTopOpen = false;
+
+    setTimeout(() => {
+        faceTwo.classList.add('contentHolderVisible');
+    }, 150)
 })
 
 let isUnderFaceBottomOpen = false;
 const faceBottom = document.querySelector('.cube__face--bottom');
-faceBottom.addEventListener('click', (event)=>{
-    event.preventDefault();
-
+faceBottom.addEventListener('click', ()=>{
     const underFaceBottom = document.querySelector('.under_face_bottom');
-    underFaceBottom.style = 'transform: scaleX(1) rotateX(-90deg) translateZ(40vh)'
-
-    // gsap.to(underBottomFaceRule, {cssRule: {right: '100%'}, duration: .5, delay: .5})
-
+    underFaceBottom.style = 'transform: scaleX(1) rotateX(-90deg) translateZ(40vh)';
     isUnderFaceBottomOpen = true;
+
+    faceFour.classList.remove('contentHolderVisible');
 })
 
 const underFaceBottom = document.querySelector('.under_face_bottom');
 underFaceBottom.addEventListener('click', ()=> {
     underFaceBottom.style = 'transform: scaleX(0) rotateX(-90deg) translateZ(40vh)';
-
     isUnderFaceBottomOpen = false;
+
+    setTimeout(() => {
+        faceFour.classList.add('contentHolderVisible');
+    }, 150)
 })
-
-
 
 let isUnderFaceRightOpen = false;
 const faceRight = document.querySelector('.cube__face--right');
@@ -217,10 +216,16 @@ faceRight.addEventListener('click', ()=> {
         underFaceRight.style['width'] = '80vh'
         underFaceRight.style['overflow'] = 'normal'
         isUnderFaceRightOpen = true
+
+        faceFive.classList.remove('contentHolderVisible');
     } else {
         underFaceRight.style['width'] = '0vh'
         underFaceRight.style['overflow'] = 'hidden'
         isUnderFaceRightOpen = false
+
+        setTimeout(() => {
+            faceFive.classList.add('contentHolderVisible');
+        }, 150)
     }
 })
 
@@ -229,6 +234,10 @@ underFaceRight.addEventListener('click', ()=>{
     underFaceRight.style['width'] = '0vh'
     underFaceRight.style['overflow'] = 'hidden'
     isUnderFaceRightOpen = false
+
+    setTimeout(() => {
+        faceFive.classList.add('contentHolderVisible');
+    }, 150)
 })
 
 let isUnderFaceLeftOpen = false
@@ -240,10 +249,16 @@ faceLeft.addEventListener('click', ()=> {
         underFaceLeft.style['width'] = '80vh'
         underFaceLeft.style['overflow'] = 'normal'
         isUnderFaceLeftOpen = true
+
+        faceSix.classList.remove('contentHolderVisible');
     } else {
         underFaceLeft.style['width'] = '0vh'
         underFaceLeft.style['overflow'] = 'hidden'
         isUnderFaceLeftOpen = false
+
+        setTimeout(() => {
+            faceSix.classList.add('contentHolderVisible');
+        }, 150)
     }
 })
 
@@ -252,6 +267,10 @@ underFaceLeft.addEventListener('click', ()=>{
     underFaceLeft.style['width'] = '0vh'
     underFaceLeft.style['overflow'] = 'hidden'
     isUnderFaceLeftOpen = false
+
+    setTimeout(() => {
+        faceSix.classList.add('contentHolderVisible');
+    }, 150)
 })
 
 
@@ -262,18 +281,28 @@ faceBack.addEventListener('click', (event)=>{
 
     const underFaceBack = document.querySelector('.under_face_back');
     if(isUnderFaceBackOpen === false) {
-        underFaceBack.style.transform = 'scaleX(1) rotateY(180deg) rotate(180deg) translateZ(40vh)'
-        isUnderFaceBackOpen = true
+        underFaceBack.style.transform = 'scaleX(1) rotateY(180deg) rotate(180deg) translateZ(40.1vh)';
+        isUnderFaceBackOpen = true;
+
+        faceThree.classList.remove('contentHolderVisible');
     } else {
-        underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
-        isUnderFaceBackOpen = false
+        underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40.1vh)';
+        isUnderFaceBackOpen = false;
+
+        setTimeout(() => {
+            faceThree.classList.add('contentHolderVisible');
+        }, 150)
     }
 })
 
 const underFaceBack = document.querySelector('.under_face_back');
 underFaceBack.addEventListener('click', () => {
-    underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40vh)';
+    underFaceBack.style.transform = 'scaleX(0) rotateY(180deg) rotate(180deg) translateZ(40.1vh)';
     isUnderFaceBackOpen = false
+
+    setTimeout(() => {
+        faceThree.classList.add('contentHolderVisible');
+    }, 150)
 })
 
 let isUnderFaceFrontOpen = false
@@ -283,9 +312,10 @@ faceFront.addEventListener('click', (event)=>{
 
     const underFaceFront = document.querySelector('.under_face_front');
     if(isUnderFaceFrontOpen === false) {
-        console.log('dupppaaa')
         underFaceFront.style.transform = 'scaleX(1) rotateX( 0deg) translateZ(40vh)';
         isUnderFaceFrontOpen = true;
+
+        faceOne.classList.remove('contentHolderVisible');
     }
 })
 
@@ -293,15 +323,13 @@ const underFaceFront = document.querySelector('.under_face_front');
 underFaceFront.addEventListener('click', () => {
     underFaceFront.style.transform = 'scaleX(0) rotateX( 0deg) translateZ(40vh)';
     isUnderFaceFrontOpen = false;
+
+    setTimeout(() => {
+        faceOne.classList.add('contentHolderVisible');
+    }, 150)
 })
 
-
-window.addEventListener('click', (e)=>{
-    console.log(e.target)
-})
-
-// close opened info blocks
-
+// closing opened under faces
 const closeOpenInfoBlock = () => {
 
     if (isUnderFaceTopOpen === true) {
@@ -344,14 +372,12 @@ const closeOpenInfoBlock = () => {
 }
 
 // rotate on scroll
-
 let numberOfRotationDown = 0
 
 function rotateCube(event) {
     event.preventDefault();
-    const cube = document.querySelector('.cube');
-    const netNauts = document.querySelectorAll('.astro');
 
+    const cube = document.querySelector('.cube');
     const astro1 = document.querySelector('.astro1');
     const astro2 = document.querySelector('.astro2');
     const astro3 = document.querySelector('.astro3');
@@ -412,11 +438,10 @@ function rotateCube(event) {
             cubeFaceToUser = 'home'
         }
     }
-    console.log(cubeFaceToUser)
     makeCubeFaceToUserVisible(cubeFaceToUser)
 }
 
-window.addEventListener('scroll', debounce(rotateCube, 50));
+window.addEventListener('scroll', debounce(rotateCube, 20));
 
 
 // contactBtn
@@ -424,9 +449,9 @@ window.addEventListener('scroll', debounce(rotateCube, 50));
 let contactLeftValue = "100%"
 const contactNavBtn = document.querySelector('.contactNavBtn');
 contactNavBtn.addEventListener('click', () => {
-    console.log(contactLeftValue)
 
     const contactContainer = document.querySelector('.contactContainer');
+    const body = document.querySelector('body');
     const allNavLinks = document.querySelectorAll('li');
     if(contactLeftValue === "20%"){
         contactContainer.style['left'] = "100%";
@@ -444,11 +469,13 @@ contactNavBtn.addEventListener('click', () => {
     contactNavBtn.classList.add('chosen');
 })
 
+// resize contact
 let resizeContactLeftValue = "100%"
 const resizeContactNavBtn = document.querySelector('.resizeContactNavBtn');
 resizeContactNavBtn.addEventListener('click', () => {
 
     const contactContainer = document.querySelector('.contactContainer');
+    const body = document.querySelector('body');
     const allNavLinks = document.querySelectorAll('li');
     if(resizeContactLeftValue === "0%"){
         contactContainer.style['left'] = "100%";
@@ -979,3 +1006,54 @@ resizeWhyWeNavBtn.addEventListener('click', () => {
     astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)'
 })
 
+
+// open projects in new bar
+
+const project1 = document.querySelector('.project1');
+project1.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open('https://wkr92.github.io/Shouzen/#/', '_blank').focus();
+})
+
+const project2 = document.querySelector('.project2');
+project2.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open('https://wkr92.github.io/LookForAnImage/#/', '_blank').focus();
+})
+
+const project3 = document.querySelector('.project3');
+project3.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open('https://wkr92.github.io/article-page/', '_blank').focus();
+})
+
+const project4 = document.querySelector('.project4');
+project4.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open('https://wkr92.github.io/sorting-site/', '_blank').focus();
+})
+
+const project5 = document.querySelector('.project5');
+project5.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open('https://wkr92.github.io/StagePalls/', '_blank').focus();
+})
+
+const project6 = document.querySelector('.project6');
+project6.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open('https://fastpdfreader.herokuapp.com', '_blank').focus();
+})
+
+
+// mouse icon little animation
+const mouseIconHolder = document.querySelectorAll('.mouseIconHolder');
+const mouseIcon = document.querySelectorAll('.mouse_icon');
+Object.values(mouseIconHolder).map(e => e.addEventListener('mouseenter', () => {
+
+    const mouseAnim = gsap.timeline();
+    mouseAnim
+        .to(Object.values(mouseIcon).map(e => e), {height: "1.25rem", width: '1.25rem', margin: '0.125rem', duration: 0.10})
+        .to(Object.values(mouseIcon).map(e => e), {height: "1.5rem", width: '1.5rem', margin: '0rem', duration: 0.10, delay: 0.10})
+
+}))
