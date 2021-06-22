@@ -880,7 +880,7 @@ function rotateCube(event) {
   }
   makeCubeFaceToUserVisible(cubeFaceToUser);
 }
-window.addEventListener('scroll', _lodashDebounceDefault.default(rotateCube, 50));
+window.addEventListener('scroll', _lodashDebounceDefault.default(rotateCube, 250));
 // contactBtn
 let contactLeftValue = "100%";
 const contactNavBtn = document.querySelector('.contactNavBtn');
