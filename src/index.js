@@ -4,9 +4,7 @@ import debounce from 'lodash.debounce';
 gsap.registerPlugin(CSSRulePlugin);
 
 const rule = CSSRulePlugin.getRule(".box3:before");
-const underTopFaceRule = CSSRulePlugin.getRule(".under_face_top::after");
 const choseAfterRule = CSSRulePlugin.getRule(".chosen::after");
-const homeLi = CSSRulePlugin.getRule(".under_face_top::after");
 
 
 // push scroll top on reload
