@@ -43,65 +43,67 @@
 
           <div class="under_cube__face astro1 astro">
             <p class="cube_p"></p>
-            <img src="./asets/astro1.png" alt="astronaut">
+            <img src="./asets/astro1.png" alt="astronaut" class="astroImg">
           </div>
           <div class="under_cube__face astro2 astro">
             <p class="cube_p"></p>
-            <img src="./asets/astro2.png" alt="astronaut">
+            <img src="./asets/astro2.png" alt="astronaut" class="astroImg">
           </div>
           <div class="under_cube__face astro3 astro">
             <p class="cube_p"></p>
-            <img src="./asets/astro3.png" alt="astronaut">
+            <img src="./asets/astro3.png" alt="astronaut" class="astroImg">
           </div>
           <div class="under_cube__face astro4 astro">
             <p class="cube_p"></p>
-            <img src="./asets/astro4.png" alt="astronaut">
+            <img src="./asets/astro4.png" alt="astronaut" class="astroImg">
           </div>
 
           <div class="under_cube__face under_face_front" id="under-front">
-            <p class="under_cube_p">underFront</p>
+            <div class="under-front-container">
+              <p class="under-front-p">Now You are ready to go into the Web. The ship is lunching. Enjoy the way!</p>
+            </div>
           </div>
           <div class="under_cube__face under_face_back" id="under-back">
             <div class="projectsContainer">
               <div class="project1Holder proj-Holder">
                 <p class="project_title">Shouzen - shoes shop</p>
                 <div class="project1 project">
-                  <img src="./asets/proj1.PNG" alt="shoes_shop">
+                  <img src="./asets/proj1.PNG" alt="shoes_shop" class="projImg">
                 </div>
                 <p class="projectStack_p">* TS, SCSS, React, Redux, Firebase</p>
               </div>
               <div class="project2Holder proj-Holder">
                 <p class="project_title">LookForAnImage - pictures browser</p>
                 <div class="project2 project">
-                  <img src="./asets/proj2.PNG" alt="image_browser">
+                  <img src="./asets/proj2.PNG" alt="image_browser" class="projImg">
                 </div>
                 <p class="projectStack_p">* JS, SCSS, React</p>
               </div>
               <div class="project3Holder proj-Holder">
                 <p class="project_title">Article page</p>
                 <div class="project3 project">
-                  <img src="./asets/proj3.PNG" alt="image_browser">
+                  <img src="./asets/proj3.PNG" alt="article_page" class="projImg">
                 </div>
                 <p class="projectStack_p">* VJS, CSS, WebPack, BootStrap</p>
               </div>
               <div class="project4Holder proj-Holder">
                 <p class="project_title">Sorting page</p>
                 <div class="project4 project">
-                  <img src="./asets/sortingPage.PNG" alt="image_browser">
+                  <img src="./asets/sortingPage.PNG" alt="sorting_page" class="projImg">
                 </div>
                 <p class="projectStack_p">* VJS, CSS, WebPack</p>
               </div>
               <div class="project5Holder proj-Holder">
                 <p class="project_title">StagePalls - band members finder</p>
                 <div class="project5 project">
-                  <img src="./asets/stagePals.PNG" alt="image_browser">
+                  <img src="./asets/stagePals.PNG" alt="stage_palls" class="projImg">
                 </div>
                 <p class="projectStack_p">* JS, SCSS, React</p>
               </div>
               <div class="project6Holder proj-Holder">
                 <p class="project_title">FastPDFReader - read word by word</p>
                 <div class="project6 project">
-                  <img src="./asets/pdfReader.PNG" alt="image_browser">
+                  <img src="./asets/pdfReader.PNG" alt="fastPFFReader" class="projImg">
                 </div>
                 <p class="projectStack_p">* Python, Flask, JS, React, JQuery</p>
               </div>
@@ -109,7 +111,6 @@
           </div>
           <div class="under_cube__face under_face_bottom" id="under-bottom">
             <div class="OuterContainer">
-
             <div class="under-bottom-container">
               <p class="under_cube_p under-bottom_p">Too old to explore Earth, too young to explore space, but
                 at the perfect age to discover the Web. For me, web development is a chance to give something from 
@@ -142,16 +143,28 @@
             </div>
           </div>
           <div class="under_cube__face under_face_left" id="under-left">
-            
+            <div class="under-left-container">
+              <p class="under-left-p">Cosmos is set, but Web can be anything. Try it!</p>
+              <div class="under-left-btns-holder">
+                <button class="under-left-btn changeBtn">Change Web</button>
+                <button class="under-left-btn initialBtn">Set initial Web</button>
+              </div>
+            </div>
           </div>
 
 
           <div class="cube__face cube__face--front" id="front">
             <div class="homeContainer contentHolder contentHolderVisible">
-              <h2 class="content_title">Let me take You for the journey!</h2>
-              <div class="mouseIconHolder">
-                <p class="mouse_p">left click to open</p>
-                <img class="mouse_icon" src="./asets/mouse.png" alt="mouse">
+              <h2 class="content_title homeTitle">Let me take You for the journey!</h2>
+              <div class="instructionHolder">
+                <div class="scrollHolder">
+                  <p class="scrollHolder_p">scroll to travel</p>
+                  <img class="scrollHolder_icon instructionIcon" src="./asets/scroll.png" alt="scroll">
+                </div>
+                <div class="clickHolder">
+                  <p class="clickHolder_p">left click to open</p>
+                  <img class="clickHolder_icon instructionIcon" src="./asets/mouse.png" alt="mouse">
+                </div>
               </div>
             </div>
           </div>
@@ -161,46 +174,26 @@
               <p class="content_p" >
                 Look where I have been in search for new virtual lands so far.
               </p>
-              <div class="mouseIconHolder">
-                <p class="mouse_p">left click to open</p>
-                <img class="mouse_icon" src="./asets/mouse.png" alt="mouse">
-              </div>
             </div>
           </div>
           <div class="cube__face cube__face--top" id="top">
             <div class="processContainer contentHolder contentHolderVisible">
               <h2 class="content_title">What is my skill set?</h2>
-              <div class="mouseIconHolder">
-                <p class="mouse_p">left click to open</p>
-                <img class="mouse_icon" src="./asets/mouse.png" alt="mouse">
-              </div>
             </div>
           </div>
           <div class="cube__face cube__face--bottom" id="bottom">
             <div class="whyWeContainer contentHolder contentHolderVisible">
               <h2 class="content_title">So why me, hm?</h2>
-              <div class="mouseIconHolder">
-                <p class="mouse_p">left click to open</p>
-                <img class="mouse_icon" src="./asets/mouse.png" alt="mouse">
-              </div>
             </div>
           </div>
           <div class="cube__face cube__face--right" id="right">
             <div class="rightContainer contentHolder contentHolderVisible">
-              <h2 class="content_title">How do I look like? If You wonder</h2>
-              <div class="mouseIconHolder">
-                <p class="mouse_p">left click to open</p>
-                <img class="mouse_icon" src="./asets/mouse.png" alt="mouse">
-              </div>
+              <h2 class="content_title">How do I look like without NetNaut outfit. If You wonder</h2>
             </div>
           </div>
           <div class="cube__face cube__face--left" id="left">
             <div class="leftContainer contentHolder contentHolderVisible">
               <h2 class="content_title">What can it be?</h2>
-              <div class="mouseIconHolder">
-                <p class="mouse_p">left click to open</p>
-                <img class="mouse_icon" src="./asets/mouse.png" alt="mouse">
-              </div>
             </div>
           </div>
         </div>

@@ -1048,12 +1048,95 @@ project6.addEventListener('click', (e) => {
 
 // mouse icon little animation
 const mouseIconHolder = document.querySelectorAll('.mouseIconHolder');
-const mouseIcon = document.querySelectorAll('.mouse_icon');
-Object.values(mouseIconHolder).map(e => e.addEventListener('mouseenter', () => {
+const clickHolder = document.querySelector('.clickHolder');
+const clickHolder_icon = document.querySelector('.clickHolder_icon');
+clickHolder.addEventListener('mouseenter', () => {
 
     const mouseAnim = gsap.timeline();
     mouseAnim
-        .to(Object.values(mouseIcon).map(e => e), {height: "1.25rem", width: '1.25rem', margin: '0.125rem', duration: 0.10})
-        .to(Object.values(mouseIcon).map(e => e), {height: "1.5rem", width: '1.5rem', margin: '0rem', duration: 0.10, delay: 0.10})
+        .to(clickHolder_icon, {height: "1.5rem", width: '1.5rem', margin: '0.25rem', duration: 0.10})
+        .to(clickHolder_icon, {height: "2rem", width: '2rem', margin: '0rem', duration: 0.10, delay: 0.10})
 
-}))
+})
+
+// scroll icon little animation
+const scrollHolder = document.querySelector('.scrollHolder');
+const scrollHolder_icon = document.querySelector('.scrollHolder_icon');
+scrollHolder.addEventListener('mouseenter', () => {
+    const mouseAnim = gsap.timeline();
+    mouseAnim
+        .to(scrollHolder_icon, {height: "1.25rem", width: '1.25rem', margin: '0.125rem', duration: 0.10})
+        .to(scrollHolder_icon, {height: "1.5rem", width: '1.5rem', margin: '0rem', duration: 0.10, delay: 0.10})
+})
+
+// surprise section
+const frontFaceAfterRule = CSSRulePlugin.getRule(".cube__face--front::after");
+const topFaceAfterRule = CSSRulePlugin.getRule(".cube__face--top::after");
+const backFaceAfterRule = CSSRulePlugin.getRule(".cube__face--back::after");
+const bottomFaceAfterRule = CSSRulePlugin.getRule(".cube__face--bottom::after");
+const rightFaceAfterRule = CSSRulePlugin.getRule(".cube__face--right::after");
+const leftFaceAfterRule = CSSRulePlugin.getRule(".cube__face--left::after");
+
+const frontFaceBeforeRule = CSSRulePlugin.getRule(".cube__face--front::before");
+const topFaceBeforeRule = CSSRulePlugin.getRule(".cube__face--top::before");
+const backFaceBeforeRule = CSSRulePlugin.getRule(".cube__face--back::before");
+const bottomFaceBeforeRule = CSSRulePlugin.getRule(".cube__face--bottom::before");
+const rightFaceBeforeRule = CSSRulePlugin.getRule(".cube__face--right::before");
+const leftFaceBeforeRule = CSSRulePlugin.getRule(".cube__face--left::before");
+
+const changeBtn = document.querySelector('.changeBtn');
+const initialBtn = document.querySelector('.initialBtn');
+
+changeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const changeFacesBgs = gsap.timeline();
+    changeFacesBgs
+        
+        .to([frontFaceBeforeRule,
+            topFaceBeforeRule,
+            backFaceBeforeRule,
+            bottomFaceBeforeRule,
+            rightFaceBeforeRule,
+            leftFaceBeforeRule
+        ], {cssRule: {opacity: 0.6}, duration: 1})
+        .to([frontFaceAfterRule, 
+            topFaceAfterRule, 
+            backFaceAfterRule, 
+            bottomFaceAfterRule,
+            rightFaceAfterRule,
+            leftFaceAfterRule
+        ], {cssRule: {opacity: 0}, duration: 1}, "-=1")
+        .to('.main', 
+            {background: '#1d4350;',
+            background: '-webkit-linear-gradient(to right, #1d4350, #a43931)', 
+            background: 'linear-gradient(to right, #1d4350, #a43931)', duration: 2}, "-=1.5")
+})
+
+initialBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const changeFacesBgs = gsap.timeline();
+    changeFacesBgs
+        .to([frontFaceAfterRule, 
+            topFaceAfterRule, 
+            backFaceAfterRule, 
+            bottomFaceAfterRule,
+            rightFaceAfterRule,
+            leftFaceAfterRule
+        ], {cssRule: {opacity: 0.6}, duration: 1}, "-=1")
+        .to([frontFaceBeforeRule,
+            topFaceBeforeRule,
+            backFaceBeforeRule,
+            bottomFaceBeforeRule,
+            rightFaceBeforeRule,
+            leftFaceBeforeRule
+        ], {cssRule: {opacity: 0}, duration: 1})
+        .to('.main', 
+            {background: '#F0F2F0;',
+            background: '-webkit-linear-gradient(to right, #000C40, #F0F2F0)', 
+            background: 'linear-gradient(to right, #000C40, #F0F2F0)', duration: 2}, "-=1.5")
+})
+
