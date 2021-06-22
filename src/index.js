@@ -439,7 +439,7 @@ function rotateCube(event) {
     makeCubeFaceToUserVisible(cubeFaceToUser)
 }
 
-window.addEventListener('scroll', debounce(rotateCube, 20));
+window.addEventListener('scroll', debounce(rotateCube, 50));
 
 
 // contactBtn

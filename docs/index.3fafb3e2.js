@@ -140,9 +140,9 @@
       this[globalName] = mainExports;
     }
   }
-})({"66lZX":[function(require,module,exports) {
+})({"3Imd1":[function(require,module,exports) {
 var HMR_HOST = null;
-var HMR_PORT = 52444;
+var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
 module.bundle.HMR_BUNDLE_ID = "0fa2489aa94c8731ee2aee9f3fafb3e2";
@@ -880,7 +880,7 @@ function rotateCube(event) {
   }
   makeCubeFaceToUserVisible(cubeFaceToUser);
 }
-window.addEventListener('scroll', _lodashDebounceDefault.default(rotateCube, 20));
+window.addEventListener('scroll', _lodashDebounceDefault.default(rotateCube, 50));
 // contactBtn
 let contactLeftValue = "100%";
 const contactNavBtn = document.querySelector('.contactNavBtn');
@@ -5339,6 +5339,6 @@ function toNumber(value) {
 }
 module.exports = debounce;
 
-},{}]},["66lZX","5rkFb"], "5rkFb", "parcelRequiref117")
+},{}]},["3Imd1","5rkFb"], "5rkFb", "parcelRequiref117")
 
 //# sourceMappingURL=index.3fafb3e2.js.map
