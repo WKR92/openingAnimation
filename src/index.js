@@ -513,8 +513,13 @@ window.addEventListener('resize', () => {
 
 // navbar section
 
+const astro1 = document.querySelector('.astro1');
+const astro2 = document.querySelector('.astro2');
+const astro3 = document.querySelector('.astro3');
+const astro4 = document.querySelector('.astro4');
+
 const homeNavBtn = document.querySelector('.homeNavBtn');
-homeNavBtn.addEventListener('click', () => {
+homeNavBtn.addEventListener('click', () => {    
 
     if(contactLeftValue === "20%"){
         const contactContainer = document.querySelector('.contactContainer');
@@ -526,15 +531,26 @@ homeNavBtn.addEventListener('click', () => {
             const cube = document.querySelector('.cube');
             cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
             rotateX = 0
+
+            astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)'
+            astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)'
+            astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)'
+            astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)'
+
+            numberOfRotationDown = 0
+            cubeFaceToUser = 'home'
+            makeCubeFaceToUserVisible(cubeFaceToUser) 
         }, 400)
 
-        numberOfRotationDown = 0
-        cubeFaceToUser = 'home'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
         rotateX = 0
+
+        astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)'
+        astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)'
+        astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)'
+        astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)'
 
         numberOfRotationDown = 0
         cubeFaceToUser = 'home'
@@ -542,16 +558,6 @@ homeNavBtn.addEventListener('click', () => {
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)'
 })
 
 // processNavBtn
@@ -568,32 +574,33 @@ processNavBtn.addEventListener('click', () => {
             const cube = document.querySelector('.cube');
             cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
             rotateX = -90
+
+            astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
+
+            numberOfRotationDown = 1;
+            cubeFaceToUser = 'proces';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
         }, 400)
 
-        numberOfRotationDown = 1
-        cubeFaceToUser = 'proces'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
         rotateX = -90
 
-        numberOfRotationDown = 1
-        cubeFaceToUser = 'proces'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
+
+        numberOfRotationDown = 1;
+        cubeFaceToUser = 'proces';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)'
 })
 
 // portfolioNavBtn
@@ -610,32 +617,33 @@ portfolioNavBtn.addEventListener('click', () => {
             const cube = document.querySelector('.cube');
             cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
             rotateX = -180
+
+            astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
+
+            numberOfRotationDown = 2;
+            cubeFaceToUser = 'portfolio';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
         }, 400)
 
-        numberOfRotationDown = 2
-        cubeFaceToUser = 'portfolio'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
         cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
         rotateX = -180
 
-        numberOfRotationDown = 2
-        cubeFaceToUser = 'portfolio'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
+
+        numberOfRotationDown = 2;
+        cubeFaceToUser = 'portfolio';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)'
 })
 
 // whyWeNavBtn
@@ -650,17 +658,28 @@ whyWeNavBtn.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
-            rotateX = -270
+            cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
+            rotateX = -270;
+                    
+            astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
+
+            numberOfRotationDown = 3
+            cubeFaceToUser = 'dlaczego my'
+            makeCubeFaceToUserVisible(cubeFaceToUser)
         }, 400)
 
-        numberOfRotationDown = 3
-        cubeFaceToUser = 'dlaczego my'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
-        rotateX = -270
+        cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
+        rotateX = -270;
+
+        astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
 
         numberOfRotationDown = 3
         cubeFaceToUser = 'dlaczego my'
@@ -668,16 +687,6 @@ whyWeNavBtn.addEventListener('click', () => {
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)'
 })
 
 // extraOne
@@ -692,30 +701,30 @@ extraOne.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-50vh) rotateY(-90deg)"
-        }, 400)
+            cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
 
-        cubeFaceToUser = 'right'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+
+            cubeFaceToUser = 'right';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-50vh) rotateY(-90deg)"
+        cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
 
-        cubeFaceToUser = 'right'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+
+        cubeFaceToUser = 'right';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
 })
 
 // extraTwo
@@ -731,29 +740,29 @@ extraTwo.addEventListener('click', () => {
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
             cube.style.transform = "translateZ(-50vh) rotateY(90deg)"
-        }, 400)
 
-        cubeFaceToUser = 'left'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+
+            cubeFaceToUser = 'left';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-50vh) rotateY(90deg)"
+        cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
 
-        cubeFaceToUser = 'left'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+
+        cubeFaceToUser = 'left';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
 })
 
 
@@ -773,32 +782,31 @@ resizeHomeNavBtn.addEventListener('click', () => {
             const cube = document.querySelector('.cube');
             cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
             rotateX = 0
-        }, 400)
 
-        numberOfRotationDown = 0
-        cubeFaceToUser = 'home'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)';
+
+            numberOfRotationDown = 0;
+            cubeFaceToUser = 'home';
+            makeCubeFaceToUserVisible(cubeFaceToUser)
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-40vh) rotateX(0deg)"
-        rotateX = 0
+        cube.style.transform = "translateZ(-40vh) rotateX(0deg)";
+        rotateX = 0;
 
-        numberOfRotationDown = 0
-        cubeFaceToUser = 'home'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)';
+
+        numberOfRotationDown = 0;
+        cubeFaceToUser = 'home';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
-
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)'
 })
 
 // resizeProcessNavBtn
@@ -813,34 +821,34 @@ resizeProcessNavBtn.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
-            rotateX = -90
-        }, 400)
+            cube.style.transform = "translateZ(-40vh) rotateX(-90deg)";
+            rotateX = -90;
 
-        numberOfRotationDown = 1
-        cubeFaceToUser = 'proces'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
+
+            numberOfRotationDown = 1;
+            cubeFaceToUser = 'proces';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-40vh) rotateX(-90deg)"
-        rotateX = -90
+        cube.style.transform = "translateZ(-40vh) rotateX(-90deg)";
+        rotateX = -90;
 
-        numberOfRotationDown = 1
-        cubeFaceToUser = 'proces'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
+
+        numberOfRotationDown = 1;
+        cubeFaceToUser = 'proces';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)'
 })
 
 // resizePortfolioNavBtn
@@ -855,34 +863,33 @@ resizePortfolioNavBtn.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
-            rotateX = -180
-        }, 400)
+            cube.style.transform = "translateZ(-40vh) rotateX(-180deg)";
+            rotateX = -180;
 
-        numberOfRotationDown = 2
-        cubeFaceToUser = 'portfolio'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
+
+            numberOfRotationDown = 2;
+            cubeFaceToUser = 'portfolio';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-40vh) rotateX(-180deg)"
-        rotateX = -180
+        cube.style.transform = "translateZ(-40vh) rotateX(-180deg)";
+        rotateX = -180;
 
-        numberOfRotationDown = 2
-        cubeFaceToUser = 'portfolio'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
+
+        numberOfRotationDown = 2;
+        cubeFaceToUser = 'portfolio';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
-
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)'
 })
 
 // resizeExtraOne
@@ -897,30 +904,30 @@ resizeExtraOne.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-50vh) rotateY(-90deg)"
-        }, 400)
+            cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
 
-        cubeFaceToUser = 'right'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+
+            cubeFaceToUser = 'right';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-50vh) rotateY(-90deg)"
+        cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
 
-        cubeFaceToUser = 'right'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)';
+
+        cubeFaceToUser = 'right';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(90deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(90deg)'
 })
 
 
@@ -936,30 +943,30 @@ resizeExtraTwo.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-50vh) rotateY(90deg)"
-        }, 400)
+            cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
 
-        cubeFaceToUser = 'left'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+
+            cubeFaceToUser = 'left';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-50vh) rotateY(90deg)"
+        cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
 
-        cubeFaceToUser = 'left'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)';
+
+        cubeFaceToUser = 'left';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(' + (rotateX) + 'deg) rotateY(-90deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(' + (rotateX) + 'deg)  rotateY(-90deg)'
 })
 
 const resizeWhyWeNavBtn = document.querySelector('.resizeWhyWeNavBtn');
@@ -973,34 +980,34 @@ resizeWhyWeNavBtn.addEventListener('click', () => {
 
         setTimeout(()=>{
             const cube = document.querySelector('.cube');
-            cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
-            rotateX = -270
-        }, 400)
+            cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
+            rotateX = -270;
 
-        numberOfRotationDown = 3
-        cubeFaceToUser = 'dlaczego my'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+            astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+            astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+            astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+            astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
+
+            numberOfRotationDown = 3;
+            cubeFaceToUser = 'dlaczego my';
+            makeCubeFaceToUserVisible(cubeFaceToUser);
+        }, 400)
     } else {
         const cube = document.querySelector('.cube');
-        cube.style.transform = "translateZ(-40vh) rotateX(-270deg)"
-        rotateX = -270
+        cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
+        rotateX = -270;
 
-        numberOfRotationDown = 3
-        cubeFaceToUser = 'dlaczego my'
-        makeCubeFaceToUserVisible(cubeFaceToUser)
+        astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+        astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+        astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+        astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
+
+        numberOfRotationDown = 3;
+        cubeFaceToUser = 'dlaczego my';
+        makeCubeFaceToUserVisible(cubeFaceToUser);
     }
     closeOpenInfoBlock();
 
-    // turn astronauts
-    const astro1 = document.querySelector('.astro1');
-    const astro2 = document.querySelector('.astro2');
-    const astro3 = document.querySelector('.astro3');
-    const astro4 = document.querySelector('.astro4');
-
-    astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)'
-    astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)'
-    astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)'
-    astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)'
 })
 
 

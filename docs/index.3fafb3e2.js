@@ -938,6 +938,10 @@ window.addEventListener('resize', () => {
   }
 });
 // navbar section
+const astro1 = document.querySelector('.astro1');
+const astro2 = document.querySelector('.astro2');
+const astro3 = document.querySelector('.astro3');
+const astro4 = document.querySelector('.astro4');
 const homeNavBtn = document.querySelector('.homeNavBtn');
 homeNavBtn.addEventListener('click', () => {
   if (contactLeftValue === "20%") {
@@ -949,28 +953,27 @@ homeNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(0deg)";
       rotateX = 0;
+      astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)';
+      numberOfRotationDown = 0;
+      cubeFaceToUser = 'home';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 0;
-    cubeFaceToUser = 'home';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(0deg)";
     rotateX = 0;
+    astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)';
     numberOfRotationDown = 0;
     cubeFaceToUser = 'home';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(0deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(0deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(0deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(0deg) rotateY(0deg)';
 });
 // processNavBtn
 const processNavBtn = document.querySelector('.processNavBtn');
@@ -984,28 +987,27 @@ processNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(-90deg)";
       rotateX = -90;
+      astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
+      numberOfRotationDown = 1;
+      cubeFaceToUser = 'proces';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 1;
-    cubeFaceToUser = 'proces';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-90deg)";
     rotateX = -90;
+    astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
     numberOfRotationDown = 1;
     cubeFaceToUser = 'proces';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
 });
 // portfolioNavBtn
 const portfolioNavBtn = document.querySelector('.portfolioNavBtn');
@@ -1019,28 +1021,27 @@ portfolioNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(-180deg)";
       rotateX = -180;
+      astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
+      numberOfRotationDown = 2;
+      cubeFaceToUser = 'portfolio';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 2;
-    cubeFaceToUser = 'portfolio';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-180deg)";
     rotateX = -180;
+    astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
     numberOfRotationDown = 2;
     cubeFaceToUser = 'portfolio';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
 });
 // whyWeNavBtn
 const whyWeNavBtn = document.querySelector('.whyWeNavBtn');
@@ -1054,28 +1055,27 @@ whyWeNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
       rotateX = -270;
+      astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
+      numberOfRotationDown = 3;
+      cubeFaceToUser = 'dlaczego my';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 3;
-    cubeFaceToUser = 'dlaczego my';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
     rotateX = -270;
+    astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
     numberOfRotationDown = 3;
     cubeFaceToUser = 'dlaczego my';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
 });
 // extraOne
 const extraOne = document.querySelector('.extraOne');
@@ -1088,25 +1088,24 @@ extraOne.addEventListener('click', () => {
     setTimeout(() => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
+      astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(90deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+      cubeFaceToUser = 'right';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    cubeFaceToUser = 'right';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(90deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
     cubeFaceToUser = 'right';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(90deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
 });
 // extraTwo
 const extraTwo = document.querySelector('.extraTwo');
@@ -1119,25 +1118,24 @@ extraTwo.addEventListener('click', () => {
     setTimeout(() => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
+      astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(-90deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+      cubeFaceToUser = 'left';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    cubeFaceToUser = 'left';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(-90deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
     cubeFaceToUser = 'left';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(-90deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
 });
 // resizeMenuBtns
 // resizeHomeNavBtn
@@ -1152,28 +1150,27 @@ resizeHomeNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(0deg)";
       rotateX = 0;
+      astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)';
+      numberOfRotationDown = 0;
+      cubeFaceToUser = 'home';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 0;
-    cubeFaceToUser = 'home';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(0deg)";
     rotateX = 0;
+    astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)';
     numberOfRotationDown = 0;
     cubeFaceToUser = 'home';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(0) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(0) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(0) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(0) rotateY(0deg)';
 });
 // resizeProcessNavBtn
 const resizeProcessNavBtn = document.querySelector('.resizeProcessNavBtn');
@@ -1187,28 +1184,27 @@ resizeProcessNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(-90deg)";
       rotateX = -90;
+      astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
+      numberOfRotationDown = 1;
+      cubeFaceToUser = 'proces';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 1;
-    cubeFaceToUser = 'proces';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-90deg)";
     rotateX = -90;
+    astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
     numberOfRotationDown = 1;
     cubeFaceToUser = 'proces';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(-90deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(-90deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(-90deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(-90deg) rotateY(0deg)';
 });
 // resizePortfolioNavBtn
 const resizePortfolioNavBtn = document.querySelector('.resizePortfolioNavBtn');
@@ -1222,28 +1218,27 @@ resizePortfolioNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(-180deg)";
       rotateX = -180;
+      astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
+      numberOfRotationDown = 2;
+      cubeFaceToUser = 'portfolio';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 2;
-    cubeFaceToUser = 'portfolio';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-180deg)";
     rotateX = -180;
+    astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
     numberOfRotationDown = 2;
     cubeFaceToUser = 'portfolio';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(-180deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(-180deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(-180deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(-180deg) rotateY(0deg)';
 });
 // resizeExtraOne
 const resizeExtraOne = document.querySelector('.resizeExtraOne');
@@ -1256,25 +1251,24 @@ resizeExtraOne.addEventListener('click', () => {
     setTimeout(() => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
+      astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(90deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+      cubeFaceToUser = 'right';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    cubeFaceToUser = 'right';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-50vh) rotateY(-90deg)";
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(90deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
     cubeFaceToUser = 'right';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(90deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(90deg)';
 });
 // resizeExtraTwo
 const resizeExtraTwo = document.querySelector('.resizeExtraTwo');
@@ -1287,25 +1281,24 @@ resizeExtraTwo.addEventListener('click', () => {
     setTimeout(() => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
+      astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(-90deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+      cubeFaceToUser = 'left';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    cubeFaceToUser = 'left';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-50vh) rotateY(90deg)";
+    astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(-90deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
     cubeFaceToUser = 'left';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(' + rotateX + 'deg) rotateY(-90deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(' + rotateX + 'deg)  rotateY(-90deg)';
 });
 const resizeWhyWeNavBtn = document.querySelector('.resizeWhyWeNavBtn');
 resizeWhyWeNavBtn.addEventListener('click', () => {
@@ -1318,28 +1311,27 @@ resizeWhyWeNavBtn.addEventListener('click', () => {
       const cube = document.querySelector('.cube');
       cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
       rotateX = -270;
+      astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+      astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+      astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+      astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
+      numberOfRotationDown = 3;
+      cubeFaceToUser = 'dlaczego my';
+      makeCubeFaceToUserVisible(cubeFaceToUser);
     }, 400);
-    numberOfRotationDown = 3;
-    cubeFaceToUser = 'dlaczego my';
-    makeCubeFaceToUserVisible(cubeFaceToUser);
   } else {
     const cube = document.querySelector('.cube');
     cube.style.transform = "translateZ(-40vh) rotateX(-270deg)";
     rotateX = -270;
+    astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
+    astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
+    astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
+    astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
     numberOfRotationDown = 3;
     cubeFaceToUser = 'dlaczego my';
     makeCubeFaceToUserVisible(cubeFaceToUser);
   }
   closeOpenInfoBlock();
-  // turn astronauts
-  const astro1 = document.querySelector('.astro1');
-  const astro2 = document.querySelector('.astro2');
-  const astro3 = document.querySelector('.astro3');
-  const astro4 = document.querySelector('.astro4');
-  astro1.style.transform = 'translateZ(10vh) rotateX(-270deg) rotateY(0deg)';
-  astro2.style.transform = 'translateZ(20vh) rotateX(-270deg) rotateY(0deg)';
-  astro3.style.transform = 'translateZ(-20vh) rotateX(-270deg) rotateY(0deg)';
-  astro4.style.transform = 'translateZ(-10vh) rotateX(-270deg) rotateY(0deg)';
 });
 // open projects in new bar
 const project1 = document.querySelector('.project1');
