@@ -18,7 +18,7 @@ const tl = gsap.timeline()
 if(document.body.clientWidth > 800){
 
     tl
-    .to(rule, {cssRule: {opacity: '1'}, duration: 0}, 0)
+    .to(rule, {cssRule: {left: '5px'}, duration: 0})
     .from(['.box3', '.box2', '.box1'], {scaleY: 0, transformOrigin: 'top', duration: .75})
     .to(rule, {cssRule: {left: '100%'}, duration: .5}, .75)
     .to(['.box3'], {scaleX: 0, transformOrigin: 'left', duration: .5}, 2.25)

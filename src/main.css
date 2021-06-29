@@ -186,14 +186,14 @@ body {
     position: absolute;
     top: 0;
     bottom: -200px;
-    left: 5px;
+    left: 0;
     right: 0;
     background-color: #fff;
     z-index: 2;
     content: "";
     border: none;
     outline: none;
-    opacity: 0;
+    opacity: 1;
 }
 
 .box1Text, .box2Text, .box3Text {

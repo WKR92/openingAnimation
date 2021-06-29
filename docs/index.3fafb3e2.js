@@ -459,10 +459,10 @@ const tl = _gsap.gsap.timeline();
 if (document.body.clientWidth > 800) {
   tl.to(rule, {
     cssRule: {
-      opacity: '1'
+      left: '5px'
     },
     duration: 0
-  }, 0).from(['.box3', '.box2', '.box1'], {
+  }).from(['.box3', '.box2', '.box1'], {
     scaleY: 0,
     transformOrigin: 'top',
     duration: .75
