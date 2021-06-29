@@ -505,21 +505,7 @@ if (document.body.clientWidth > 800) {
     duration: .5
   }, 4);
 } else {
-  tl.set(['.box3', '.box2'], {
-    left: '0%',
-    width: '100%',
-    scaleY: 1,
-    zIndex: 9999
-  }).fromTo(rule, {
-    cssRule: {
-      opacity: '0'
-    }
-  }, {
-    cssRule: {
-      opacity: '1'
-    },
-    duration: 0
-  }, 0).fromTo(rule, {
+  tl.fromTo(rule, {
     cssRule: {
       left: '0%'
     }

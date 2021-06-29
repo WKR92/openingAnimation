@@ -40,7 +40,6 @@ body {
     align-items: center;
     transform-style: preserve-3d;
     perspective: 1000px;
-
     position: fixed;
 }
 
@@ -190,6 +189,13 @@ body {
     border: none;
     outline: none;
     opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .box3, .box2 {
+        width: 100%;
+        left: 0%;
+    }
 }
 
 .box1Text, .box2Text, .box3Text {
@@ -1094,6 +1100,17 @@ body {
 
 .contentHolderVisible {
     opacity: 1;
+}
+
+/* resize text */
+
+@media screen and (max-width: 600px) {
+    .content_title {
+        font-size: 70%;
+    }
+    .content_p, .scrollHolder_p, .clickHolder_p {
+        font-size: 50%;
+    }
 }
 
 /* info about stack witch I used to build this page */
